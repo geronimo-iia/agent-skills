@@ -1,0 +1,27 @@
+{
+  "type": "skills",
+  "version": "1.0",
+  "entries": [
+    {
+      "id": "",
+      "name": "datalab-marker",
+      "summary": "",
+      "version": "1.0.0",
+      "path": "datalab-marker/SKILL.md",
+      "commit_hash": "f081d649eadcd35a0d7d75adb49fdb82ca54098f",
+      "last_updated": "",
+      "tags": [
+        "pdf",
+        "document",
+        "conversion",
+        "markdown",
+        "ocr"
+      ]
+    }
+  ],
+  "metadata": {
+    "generated_at": "2025-01-16T00:00:00Z",
+    "commit_hash": "f081d649eadcd35a0d7d75adb49fdb82ca54098f",
+    "total_entries": 1
+  }
+}

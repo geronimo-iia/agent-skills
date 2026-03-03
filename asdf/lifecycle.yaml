@@ -1,0 +1,49 @@
+variables:
+  ASDF_DIR: ${HOME}/.asdf
+  ASDF_DATA_DIR: ${HOME}/.asdf
+
+install:
+  - command: |
+      if [ ! -d "${ASDF_DIR}" ]; then
+        git clone https://github.com/asdf-vm/asdf.git ${ASDF_DIR} --branch v0.14.0
+      fi
+    description: Clone asdf repository
+    platform: all
+    requires_approval: true
+  - command: |
+      SHELL_RC="${HOME}/.bashrc"
+      if [ -n "${ZSH_VERSION}" ]; then
+        SHELL_RC="${HOME}/.zshrc"
+      fi
+      
+      if ! grep -q "asdf.sh" "${SHELL_RC}"; then
+        echo "" >> "${SHELL_RC}"
+        echo "# asdf version manager" >> "${SHELL_RC}"
+        echo ". ${ASDF_DIR}/asdf.sh" >> "${SHELL_RC}"
+      fi
+    description: Add asdf to shell configuration
+    platform: all
+    requires_approval: true
+
+update:
+  - command: cd ${ASDF_DIR} && git fetch --all && git checkout v0.14.0
+    description: Update asdf to latest version
+    platform: all
+    requires_approval: true
+
+uninstall:
+  - command: rm -rf ${ASDF_DIR}
+    description: Remove asdf directory
+    platform: all
+    requires_approval: true
+  - command: |
+      SHELL_RC="${HOME}/.bashrc"
+      if [ -n "${ZSH_VERSION}" ]; then
+        SHELL_RC="${HOME}/.zshrc"
+      fi
+      
+      sed -i.bak '/asdf.sh/d' "${SHELL_RC}"
+      sed -i.bak '/asdf version manager/d' "${SHELL_RC}"
+    description: Remove asdf from shell configuration
+    platform: all
+    requires_approval: true

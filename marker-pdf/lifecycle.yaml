@@ -1,0 +1,53 @@
+variables:
+  VENV_PATH: ${SKILL_PATH}/.venv
+  PYTHON_BIN: ${VENV_PATH}/bin/python
+  MARKER_CACHE_DIR: ${SKILL_PATH}/cache
+  TORCH_HOME: ${SKILL_PATH}/torch-cache
+  HF_HOME: ${SKILL_PATH}/huggingface-cache
+  CUDA_VISIBLE_DEVICES: ""
+
+install:
+  - command: uv venv ${VENV_PATH} && uv pip install --python ${PYTHON_BIN} marker-pdf[full] pypdf
+    description: Create virtual environment and install marker-pdf with all dependencies including pypdf
+    platform: all
+    requires_approval: true
+  - command: |
+      cat > ${SKILL_PATH}/.config << EOF
+      # Marker PDF Configuration
+      # Source this file before using marker commands
+      
+      # Cache directories
+      export MARKER_CACHE_DIR="${MARKER_CACHE_DIR}"
+      export TORCH_HOME="${TORCH_HOME}"
+      export HF_HOME="${HF_HOME}"
+      
+      # GPU/CPU selection (empty = CPU only, "0" = GPU 0, "0,1" = GPU 0 and 1)
+      export CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES}"
+      EOF
+    description: Create default configuration file
+    platform: all
+    requires_approval: false
+
+update:
+  - command: uv pip install --python ${PYTHON_BIN} --upgrade marker-pdf
+    description: Update marker-pdf to latest version
+    platform: all
+    requires_approval: true
+
+uninstall:
+  - command: |
+      if [ -f ${SKILL_PATH}/.config ]; then
+        source ${SKILL_PATH}/.config
+        rm -rf "$MARKER_CACHE_DIR" "$TORCH_HOME" "$HF_HOME"
+      fi
+    description: Remove cached models using .config paths
+    platform: all
+    requires_approval: true
+  - command: rm -rf ${SKILL_PATH}/.config
+    description: Remove configuration file
+    platform: all
+    requires_approval: false
+  - command: rm -rf ${VENV_PATH}
+    description: Remove virtual environment
+    platform: all
+    requires_approval: true

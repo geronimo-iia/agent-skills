@@ -3,25 +3,23 @@
   "version": "1.0",
   "entries": [
     {
-      "id": "",
-      "name": "datalab-marker",
-      "summary": "",
-      "version": "1.0.0",
-      "path": "datalab-marker/SKILL.md",
-      "commit_hash": "f081d649eadcd35a0d7d75adb49fdb82ca54098f",
+      "name": "marker-pdf",
+      "description": "Convert documents (PDF, image, PPTX, DOCX, XLSX, HTML, EPUB) to markdown, JSON, chunks,  and HTML with high accuracy. Extracts text, tables, equations, images, and preserves  formatting. Use when the user needs to convert documents, extract content from PDFs,  process academic papers, or transform documents for analysis.\n",
+      "path": "marker-pdf/SKILL.md",
+      "commit_hash": "",
       "last_updated": "",
-      "tags": [
-        "pdf",
-        "document",
-        "conversion",
-        "markdown",
-        "ocr"
-      ]
+      "compatibility": "Requires Python 3.11+, marker-pdf package, 4GB+ RAM for model downloads",
+      "license": "GPL-3.0-or-later",
+      "metadata": {
+        "author": "VikParuchuri",
+        "version": "1.10.2",
+        "homepage": "https://github.com/VikParuchuri/marker"
+      }
     }
   ],
   "metadata": {
     "generated_at": "2025-01-16T00:00:00Z",
-    "commit_hash": "f081d649eadcd35a0d7d75adb49fdb82ca54098f",
+    "commit_hash": "afa4633cd98ff5b500b59b976d92f73ba0fadb0f",
     "total_entries": 1
   }
 }

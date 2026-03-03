@@ -34,6 +34,17 @@ Version manager for multiple runtimes. Manages Python, Node.js, Go, and other la
 - Global and local version configuration
 - Plugin ecosystem for many languages
 
+### jq
+JSON processor for command line. Query, filter, transform, and format JSON data.
+
+**Capabilities:**
+- Parse and pretty-print JSON
+- Extract fields and filter arrays
+- Transform JSON structures
+- Pipe-friendly command-line interface
+
+**Dependencies:** Requires asdf skill
+
 ## Skill Development
 
 Skills follow the [agent-foundation skills specification](../agent-foundation/skills/authoring-guide.md):

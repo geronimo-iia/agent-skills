@@ -1,0 +1,28 @@
+variables:
+  JQ_VERSION: "1.7"
+
+install:
+  - command: |
+      if ! asdf plugin list | grep -q "^jq$"; then
+        asdf plugin add jq
+      fi
+      asdf install jq ${JQ_VERSION}
+      asdf global jq ${JQ_VERSION}
+    description: Install jq using asdf
+    platform: all
+    requires_approval: true
+
+update:
+  - command: |
+      asdf plugin update jq
+      asdf install jq latest
+      asdf global jq latest
+    description: Update jq to latest version
+    platform: all
+    requires_approval: true
+
+uninstall:
+  - command: asdf uninstall jq ${JQ_VERSION}
+    description: Uninstall jq
+    platform: all
+    requires_approval: true

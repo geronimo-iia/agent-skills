@@ -1,6 +1,6 @@
 {
   "hub_id": "default",
-  "generated_at": "2026-03-07T18:05:05.779637+00:00",
+  "generated_at": "2026-03-07T18:11:23.822606+00:00",
   "skills": [
     {
       "slug": "asdf",
@@ -11,7 +11,7 @@
       "license": "MIT",
       "git_url": "",
       "path": "asdf",
-      "commit": "60655acfecc3baf16ca24ad14dffdf58fd7dbd66",
+      "commit": "625144a82147682b0cbe5d40ab4b5300f1fcb112",
       "has_lifecycle": true
     },
     {
@@ -23,7 +23,7 @@
       "license": "GPL-3.0-or-later",
       "git_url": "",
       "path": "marker-pdf",
-      "commit": "60655acfecc3baf16ca24ad14dffdf58fd7dbd66",
+      "commit": "625144a82147682b0cbe5d40ab4b5300f1fcb112",
       "has_lifecycle": true
     },
     {
@@ -43,8 +43,8 @@
       "version": "0.1.0",
       "git_url": "",
       "path": "agentctl",
-      "commit": "",
-      "has_lifecycle": false
+      "commit": "625144a82147682b0cbe5d40ab4b5300f1fcb112",
+      "has_lifecycle": true
     },
     {
       "slug": "python-quality",
@@ -65,7 +65,7 @@
       "license": "MIT",
       "git_url": "",
       "path": "jq",
-      "commit": "60655acfecc3baf16ca24ad14dffdf58fd7dbd66",
+      "commit": "625144a82147682b0cbe5d40ab4b5300f1fcb112",
       "has_lifecycle": true
     },
     {

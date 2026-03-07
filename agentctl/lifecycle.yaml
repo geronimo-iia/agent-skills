@@ -1,0 +1,60 @@
+install:
+  - command: brew tap geronimo-iia/agent && brew install agentctl
+    description: Install agentctl via Homebrew
+    platform: macos
+    requires_approval: true
+
+  - command: |
+      curl -sSL https://github.com/geronimo-iia/agentctl/releases/latest/download/x86_64-unknown-linux-gnu.tar.gz \
+        | tar xz -C ~/.local/bin
+    description: Install agentctl binary for Linux x86_64
+    platform: linux
+    requires_approval: true
+
+  - command: |
+      $url = "https://github.com/geronimo-iia/agentctl/releases/latest/download/x86_64-pc-windows-msvc.zip"
+      $dest = "$env:USERPROFILE\.local\bin"
+      New-Item -ItemType Directory -Force -Path $dest | Out-Null
+      Invoke-WebRequest $url -OutFile "$env:TEMP\agentctl.zip"
+      Expand-Archive "$env:TEMP\agentctl.zip" -DestinationPath $dest -Force
+    description: Install agentctl binary for Windows x86_64
+    platform: windows
+    requires_approval: true
+
+update:
+  - command: brew upgrade agentctl
+    description: Upgrade agentctl to latest version via Homebrew
+    platform: macos
+    requires_approval: true
+
+  - command: |
+      curl -sSL https://github.com/geronimo-iia/agentctl/releases/latest/download/x86_64-unknown-linux-gnu.tar.gz \
+        | tar xz -C ~/.local/bin
+    description: Update agentctl binary for Linux x86_64
+    platform: linux
+    requires_approval: true
+
+  - command: |
+      $url = "https://github.com/geronimo-iia/agentctl/releases/latest/download/x86_64-pc-windows-msvc.zip"
+      $dest = "$env:USERPROFILE\.local\bin"
+      Invoke-WebRequest $url -OutFile "$env:TEMP\agentctl.zip"
+      Expand-Archive "$env:TEMP\agentctl.zip" -DestinationPath $dest -Force
+    description: Update agentctl binary for Windows x86_64
+    platform: windows
+    requires_approval: true
+
+uninstall:
+  - command: brew uninstall agentctl
+    description: Remove agentctl via Homebrew
+    platform: macos
+    requires_approval: true
+
+  - command: rm -f ~/.local/bin/agentctl
+    description: Remove agentctl binary
+    platform: linux
+    requires_approval: true
+
+  - command: Remove-Item -Force "$env:USERPROFILE\.local\bin\agentctl.exe"
+    description: Remove agentctl binary
+    platform: windows
+    requires_approval: true

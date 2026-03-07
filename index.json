@@ -1,6 +1,6 @@
 {
-  "hub_id": "default",
-  "generated_at": "2026-03-07T18:17:56.543843960+00:00",
+  "hub_id": "agent-skills",
+  "generated_at": "2026-03-07T18:20:27.484833468+00:00",
   "skills": [
     {
       "slug": "jq",
@@ -11,7 +11,7 @@
       "license": "MIT",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "jq",
-      "commit": "938c27e75a2d61bebd8817b64cfb5417ddb05f4e",
+      "commit": "02b647d9c2302df1bfc1d682562094d5345e1221",
       "has_lifecycle": true
     },
     {
@@ -23,7 +23,7 @@
       "license": "GPL-3.0-or-later",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "marker-pdf",
-      "commit": "938c27e75a2d61bebd8817b64cfb5417ddb05f4e",
+      "commit": "02b647d9c2302df1bfc1d682562094d5345e1221",
       "has_lifecycle": true
     },
     {
@@ -33,7 +33,7 @@
       "version": "0.1.0",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "agentctl",
-      "commit": "938c27e75a2d61bebd8817b64cfb5417ddb05f4e",
+      "commit": "02b647d9c2302df1bfc1d682562094d5345e1221",
       "has_lifecycle": true
     },
     {
@@ -43,7 +43,7 @@
       "version": "0.1.0",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "python-scaffold",
-      "commit": "938c27e75a2d61bebd8817b64cfb5417ddb05f4e",
+      "commit": "02b647d9c2302df1bfc1d682562094d5345e1221",
       "has_lifecycle": true
     },
     {
@@ -55,7 +55,7 @@
       "license": "MIT",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "asdf",
-      "commit": "938c27e75a2d61bebd8817b64cfb5417ddb05f4e",
+      "commit": "02b647d9c2302df1bfc1d682562094d5345e1221",
       "has_lifecycle": true
     },
     {
@@ -65,7 +65,7 @@
       "version": "0.1.0",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "semantic-commit",
-      "commit": "938c27e75a2d61bebd8817b64cfb5417ddb05f4e",
+      "commit": "02b647d9c2302df1bfc1d682562094d5345e1221",
       "has_lifecycle": true
     },
     {
@@ -75,7 +75,7 @@
       "version": "0.1.0",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "python-quality",
-      "commit": "938c27e75a2d61bebd8817b64cfb5417ddb05f4e",
+      "commit": "02b647d9c2302df1bfc1d682562094d5345e1221",
       "has_lifecycle": true
     }
   ]

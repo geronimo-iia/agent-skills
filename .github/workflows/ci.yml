@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install agentctl
+        run: |
+          curl -sSL https://github.com/geronimo-iia/agentctl/releases/latest/download/x86_64-unknown-linux-gnu.tar.gz \
+            | tar xz -C /usr/local/bin
+
+      - name: Validate skills hub
+        run: agentctl hub validate --type skills --path .
+
+      - name: Generate index.json
+        run: agentctl hub generate --type skills --path . --output index.json
+
+      - name: Commit index.json
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.json
+          git diff --staged --quiet || git commit -m "chore: regenerate index.json [skip ci]"
+          git push

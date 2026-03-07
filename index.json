@@ -1,25 +1,82 @@
 {
-  "type": "skills",
-  "version": "1.0",
-  "entries": [
+  "hub_id": "default",
+  "generated_at": "2026-03-07T18:05:05.779637+00:00",
+  "skills": [
     {
+      "slug": "asdf",
+      "name": "asdf",
+      "description": "Manage multiple runtime versions (Python, Node.js, Go, etc.) with a single tool. Install, switch, and manage language versions per project using .tool-versions files. Use when you need to install or switch runtime versions for development.\n",
+      "version": "0.14.0",
+      "compatibility": "Requires bash/zsh shell, git",
+      "license": "MIT",
+      "git_url": "",
+      "path": "asdf",
+      "commit": "60655acfecc3baf16ca24ad14dffdf58fd7dbd66",
+      "has_lifecycle": true
+    },
+    {
+      "slug": "marker-pdf",
       "name": "marker-pdf",
       "description": "Convert documents (PDF, image, PPTX, DOCX, XLSX, HTML, EPUB) to markdown, JSON, chunks,  and HTML with high accuracy. Extracts text, tables, equations, images, and preserves  formatting. Use when the user needs to convert documents, extract content from PDFs,  process academic papers, or transform documents for analysis.\n",
-      "path": "marker-pdf/SKILL.md",
-      "commit_hash": "",
-      "last_updated": "",
+      "version": "1.10.2",
       "compatibility": "Requires Python 3.11+, marker-pdf package, 4GB+ RAM for model downloads",
       "license": "GPL-3.0-or-later",
-      "metadata": {
-        "author": "VikParuchuri",
-        "version": "1.10.2",
-        "homepage": "https://github.com/VikParuchuri/marker"
-      }
+      "git_url": "",
+      "path": "marker-pdf",
+      "commit": "60655acfecc3baf16ca24ad14dffdf58fd7dbd66",
+      "has_lifecycle": true
+    },
+    {
+      "slug": "python-scaffold",
+      "name": "python-scaffold",
+      "description": "Scaffold new Python projects with modern toolchain (uv, ruff, pyright, pytest) following sp_theory standards. Use when starting a new Python project or setting up project structure.",
+      "version": "0.1.0",
+      "git_url": "",
+      "path": "python-scaffold",
+      "commit": "",
+      "has_lifecycle": true
+    },
+    {
+      "slug": "agentctl",
+      "name": "agentctl",
+      "description": "Validate and generate index.json for agent skill and doc hubs using agentctl. Use when maintaining hub directories or publishing hub indexes.",
+      "version": "0.1.0",
+      "git_url": "",
+      "path": "agentctl",
+      "commit": "",
+      "has_lifecycle": false
+    },
+    {
+      "slug": "python-quality",
+      "name": "python-quality",
+      "description": "Run standardized Python quality checks: formatting, linting, type checking, and tests. Use when running code quality checks, pre-commit validation, or setting up CI/CD pipelines.",
+      "version": "0.1.0",
+      "git_url": "",
+      "path": "python-quality",
+      "commit": "",
+      "has_lifecycle": true
+    },
+    {
+      "slug": "jq",
+      "name": "jq",
+      "description": "Command-line JSON processor. Query, filter, transform, and format JSON data. Use when you need to parse JSON output, extract fields, or manipulate JSON structures.\n",
+      "version": "1.7",
+      "compatibility": "Requires asdf skill for installation",
+      "license": "MIT",
+      "git_url": "",
+      "path": "jq",
+      "commit": "60655acfecc3baf16ca24ad14dffdf58fd7dbd66",
+      "has_lifecycle": true
+    },
+    {
+      "slug": "semantic-commit",
+      "name": "semantic-commit",
+      "description": "Create semantic commits following sp_theory standards with interactive prompts. Use when making git commits or generating consistent semantic commit messages.",
+      "version": "0.1.0",
+      "git_url": "",
+      "path": "semantic-commit",
+      "commit": "",
+      "has_lifecycle": true
     }
-  ],
-  "metadata": {
-    "generated_at": "2025-01-16T00:00:00Z",
-    "commit_hash": "afa4633cd98ff5b500b59b976d92f73ba0fadb0f",
-    "total_entries": 1
-  }
+  ]
 }

@@ -1,0 +1,162 @@
+name: python-scaffold
+version: 1.0.0
+description: Scaffold Python projects with sp_theory standards
+
+install:
+  - name: Create scaffold script
+    script: |
+      #!/bin/bash
+      cat > ~/.local/bin/python-scaffold << 'EOF'
+      #!/bin/bash
+      set -e
+      
+      if [[ "$1" != "create" ]]; then
+        echo "Usage: python-scaffold create <project-name> [--description <desc>]"
+        exit 1
+      fi
+      
+      PROJECT_NAME="$2"
+      DESCRIPTION="A Python project"
+      
+      if [[ "$3" == "--description" ]]; then
+        DESCRIPTION="$4"
+      fi
+      
+      if [[ -z "$PROJECT_NAME" ]]; then
+        echo "Error: Project name required"
+        exit 1
+      fi
+      
+      PACKAGE_NAME=$(echo "$PROJECT_NAME" | tr '-' '_')
+      
+      mkdir -p "$PROJECT_NAME"/{src/$PACKAGE_NAME,tests,.github/workflows}
+      
+      # pyproject.toml
+      cat > "$PROJECT_NAME/pyproject.toml" << PYPROJECT
+      [project]
+      name = "$PROJECT_NAME"
+      version = "0.1.0"
+      description = "$DESCRIPTION"
+      requires-python = ">=3.11"
+      dependencies = []
+      
+      [project.optional-dependencies]
+      dev = [
+          "pytest>=7.0.0",
+          "ruff>=0.1.0",
+          "pyright>=1.1.0",
+      ]
+      
+      [build-system]
+      requires = ["hatchling"]
+      build-backend = "hatchling.build"
+      
+      [tool.ruff]
+      line-length = 120
+      target-version = "py311"
+      
+      [tool.ruff.lint]
+      select = ["E", "F", "I", "N", "W"]
+      
+      [tool.pyright]
+      include = ["src"]
+      typeCheckingMode = "basic"
+      
+      [tool.pytest.ini_options]
+      testpaths = ["tests"]
+      PYPROJECT
+      
+      # Source files
+      echo '"""$DESCRIPTION"""' > "$PROJECT_NAME/src/$PACKAGE_NAME/__init__.py"
+      cat > "$PROJECT_NAME/src/$PACKAGE_NAME/main.py" << MAIN
+      """Main module for $PROJECT_NAME."""
+      
+      def hello() -> str:
+          """Return a greeting."""
+          return "Hello from $PROJECT_NAME!"
+      
+      if __name__ == "__main__":
+          print(hello())
+      MAIN
+      
+      # Tests
+      echo "" > "$PROJECT_NAME/tests/__init__.py"
+      cat > "$PROJECT_NAME/tests/test_main.py" << TEST
+      """Tests for main module."""
+      from $PACKAGE_NAME.main import hello
+      
+      def test_hello():
+          """Test hello function."""
+          assert hello() == "Hello from $PROJECT_NAME!"
+      TEST
+      
+      # CI workflow
+      cat > "$PROJECT_NAME/.github/workflows/ci.yml" << CI
+      name: CI
+      
+      on:
+        push:
+          branches: [main]
+        pull_request:
+          branches: [main]
+      
+      jobs:
+        test:
+          runs-on: ubuntu-latest
+          strategy:
+            matrix:
+              python-version: ["3.11", "3.12"]
+      
+          steps:
+            - uses: actions/checkout@v4
+            - uses: astral-sh/setup-uv@v3
+            - run: uv python install \${{ matrix.python-version }}
+            - run: uv sync --extra dev
+            - run: uv run ruff format --check
+            - run: uv run ruff check
+            - run: uv run pyright
+            - run: uv run pytest
+      CI
+      
+      # README
+      cat > "$PROJECT_NAME/README.md" << README
+      # $PROJECT_NAME
+      
+      $DESCRIPTION
+      
+      ## Development
+      
+      \`\`\`bash
+      # Setup
+      uv sync --extra dev
+      
+      # Quality checks
+      uv run ruff format
+      uv run ruff check --fix
+      uv run pyright
+      
+      # Tests
+      uv run pytest
+      \`\`\`
+      README
+      
+      # .gitignore
+      cat > "$PROJECT_NAME/.gitignore" << GITIGNORE
+      __pycache__/
+      *.pyc
+      .pytest_cache/
+      .coverage
+      dist/
+      build/
+      *.egg-info/
+      .venv/
+      GITIGNORE
+      
+      echo "Created $PROJECT_NAME with sp_theory Python standards"
+      EOF
+      
+      chmod +x ~/.local/bin/python-scaffold
+
+uninstall:
+  - name: Remove scaffold script
+    script: rm -f ~/.local/bin/python-scaffold

@@ -1,6 +1,6 @@
 {
   "hub_id": "default",
-  "generated_at": "2026-03-07T18:11:23.822606+00:00",
+  "generated_at": "2026-03-07T18:14:25.923026+00:00",
   "skills": [
     {
       "slug": "asdf",
@@ -9,9 +9,9 @@
       "version": "0.14.0",
       "compatibility": "Requires bash/zsh shell, git",
       "license": "MIT",
-      "git_url": "",
+      "git_url": "git@github.com:geronimo-iia/agent-skills.git",
       "path": "asdf",
-      "commit": "625144a82147682b0cbe5d40ab4b5300f1fcb112",
+      "commit": "519239930e5c27d0b207c89d381856afdf4ce943",
       "has_lifecycle": true
     },
     {
@@ -21,9 +21,9 @@
       "version": "1.10.2",
       "compatibility": "Requires Python 3.11+, marker-pdf package, 4GB+ RAM for model downloads",
       "license": "GPL-3.0-or-later",
-      "git_url": "",
+      "git_url": "git@github.com:geronimo-iia/agent-skills.git",
       "path": "marker-pdf",
-      "commit": "625144a82147682b0cbe5d40ab4b5300f1fcb112",
+      "commit": "519239930e5c27d0b207c89d381856afdf4ce943",
       "has_lifecycle": true
     },
     {
@@ -31,7 +31,7 @@
       "name": "python-scaffold",
       "description": "Scaffold new Python projects with modern toolchain (uv, ruff, pyright, pytest) following sp_theory standards. Use when starting a new Python project or setting up project structure.",
       "version": "0.1.0",
-      "git_url": "",
+      "git_url": "git@github.com:geronimo-iia/agent-skills.git",
       "path": "python-scaffold",
       "commit": "",
       "has_lifecycle": true
@@ -41,9 +41,9 @@
       "name": "agentctl",
       "description": "Validate and generate index.json for agent skill and doc hubs using agentctl. Use when maintaining hub directories or publishing hub indexes.",
       "version": "0.1.0",
-      "git_url": "",
+      "git_url": "git@github.com:geronimo-iia/agent-skills.git",
       "path": "agentctl",
-      "commit": "625144a82147682b0cbe5d40ab4b5300f1fcb112",
+      "commit": "519239930e5c27d0b207c89d381856afdf4ce943",
       "has_lifecycle": true
     },
     {
@@ -51,7 +51,7 @@
       "name": "python-quality",
       "description": "Run standardized Python quality checks: formatting, linting, type checking, and tests. Use when running code quality checks, pre-commit validation, or setting up CI/CD pipelines.",
       "version": "0.1.0",
-      "git_url": "",
+      "git_url": "git@github.com:geronimo-iia/agent-skills.git",
       "path": "python-quality",
       "commit": "",
       "has_lifecycle": true
@@ -63,9 +63,9 @@
       "version": "1.7",
       "compatibility": "Requires asdf skill for installation",
       "license": "MIT",
-      "git_url": "",
+      "git_url": "git@github.com:geronimo-iia/agent-skills.git",
       "path": "jq",
-      "commit": "625144a82147682b0cbe5d40ab4b5300f1fcb112",
+      "commit": "519239930e5c27d0b207c89d381856afdf4ce943",
       "has_lifecycle": true
     },
     {
@@ -73,7 +73,7 @@
       "name": "semantic-commit",
       "description": "Create semantic commits following sp_theory standards with interactive prompts. Use when making git commits or generating consistent semantic commit messages.",
       "version": "0.1.0",
-      "git_url": "",
+      "git_url": "git@github.com:geronimo-iia/agent-skills.git",
       "path": "semantic-commit",
       "commit": "",
       "has_lifecycle": true

@@ -1,0 +1,91 @@
+name: python-quality
+version: 1.0.0
+description: Run Python quality checks following sp_theory standards
+
+install:
+  - name: Create quality check script
+    script: |
+      #!/bin/bash
+      cat > ~/.local/bin/python-quality << 'EOF'
+      #!/bin/bash
+      set -e
+      
+      check_uv() {
+        if ! command -v uv &> /dev/null; then
+          echo "Error: uv not found. Install with: curl -LsSf https://astral.sh/uv/install.sh | sh"
+          exit 1
+        fi
+      }
+      
+      run_format() {
+        echo "🎨 Formatting code..."
+        uv run ruff format
+      }
+      
+      run_lint() {
+        echo "🔍 Linting code..."
+        uv run ruff check
+      }
+      
+      run_types() {
+        echo "🔧 Type checking..."
+        uv run pyright
+      }
+      
+      run_test() {
+        echo "🧪 Running tests..."
+        uv run pytest --cov=src --cov-report=term-missing
+      }
+      
+      run_fix() {
+        echo "🔧 Fixing issues..."
+        uv run ruff format
+        uv run ruff check --fix
+      }
+      
+      run_all() {
+        echo "🚀 Running all quality checks..."
+        run_format
+        run_lint
+        run_types
+        run_test
+        echo "✅ All checks passed!"
+      }
+      
+      case "$1" in
+        check|"")
+          check_uv
+          run_all
+          ;;
+        format)
+          check_uv
+          run_format
+          ;;
+        lint)
+          check_uv
+          run_lint
+          ;;
+        types)
+          check_uv
+          run_types
+          ;;
+        test)
+          check_uv
+          run_test
+          ;;
+        fix)
+          check_uv
+          run_fix
+          ;;
+        *)
+          echo "Usage: python-quality [check|format|lint|types|test|fix]"
+          exit 1
+          ;;
+      esac
+      EOF
+      
+      chmod +x ~/.local/bin/python-quality
+
+uninstall:
+  - name: Remove quality check script
+    script: rm -f ~/.local/bin/python-quality

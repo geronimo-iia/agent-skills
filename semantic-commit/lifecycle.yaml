@@ -1,0 +1,153 @@
+name: semantic-commit
+version: 1.0.0
+description: Create semantic commits following sp_theory standards
+
+install:
+  - name: Create semantic commit script
+    script: |
+      #!/bin/bash
+      cat > ~/.local/bin/semantic-commit << 'EOF'
+      #!/bin/bash
+      set -e
+      
+      TYPES=("feat" "fix" "docs" "style" "refactor" "test" "chore")
+      
+      show_help() {
+        echo "Usage: semantic-commit [type] [scope] [description]"
+        echo ""
+        echo "Types: ${TYPES[*]}"
+        echo ""
+        echo "Examples:"
+        echo "  semantic-commit                           # Interactive mode"
+        echo "  semantic-commit feat \"add user auth\"      # Quick commit"
+        echo "  semantic-commit fix \"auth\" \"fix timeout\" # With scope"
+      }
+      
+      interactive_mode() {
+        echo "🎯 Semantic Commit Generator"
+        echo ""
+        
+        # Select type
+        echo "Select commit type:"
+        for i in "${!TYPES[@]}"; do
+          echo "  $((i+1)). ${TYPES[i]}"
+        done
+        read -p "Enter number (1-${#TYPES[@]}): " type_num
+        
+        if [[ ! "$type_num" =~ ^[1-${#TYPES[@]}]$ ]]; then
+          echo "Invalid selection"
+          exit 1
+        fi
+        
+        TYPE="${TYPES[$((type_num-1))]}"
+        
+        # Get scope (optional)
+        read -p "Scope (optional): " SCOPE
+        
+        # Get description
+        read -p "Description: " DESCRIPTION
+        
+        if [[ -z "$DESCRIPTION" ]]; then
+          echo "Description required"
+          exit 1
+        fi
+        
+        # Get body (optional)
+        echo "Body (optional, press Enter twice to finish):"
+        BODY=""
+        while IFS= read -r line; do
+          [[ -z "$line" ]] && break
+          BODY+="$line"$'\n'
+        done
+        
+        # Build commit message
+        if [[ -n "$SCOPE" ]]; then
+          COMMIT_MSG="$TYPE($SCOPE): $DESCRIPTION"
+        else
+          COMMIT_MSG="$TYPE: $DESCRIPTION"
+        fi
+        
+        if [[ -n "$BODY" ]]; then
+          COMMIT_MSG+=$'\n\n'"$BODY"
+        fi
+        
+        echo ""
+        echo "Commit message:"
+        echo "---"
+        echo "$COMMIT_MSG"
+        echo "---"
+        
+        read -p "Commit? (y/N): " confirm
+        if [[ "$confirm" =~ ^[Yy]$ ]]; then
+          git commit -m "$COMMIT_MSG"
+          echo "✅ Committed successfully"
+        else
+          echo "❌ Commit cancelled"
+        fi
+      }
+      
+      quick_mode() {
+        TYPE="$1"
+        SCOPE="$2"
+        DESCRIPTION="$3"
+        
+        # Validate type
+        if [[ ! " ${TYPES[*]} " =~ " $TYPE " ]]; then
+          echo "Invalid type: $TYPE"
+          echo "Valid types: ${TYPES[*]}"
+          exit 1
+        fi
+        
+        # If only 2 args, second is description
+        if [[ $# -eq 2 ]]; then
+          DESCRIPTION="$2"
+          SCOPE=""
+        fi
+        
+        if [[ -z "$DESCRIPTION" ]]; then
+          echo "Description required"
+          exit 1
+        fi
+        
+        # Build commit message
+        if [[ -n "$SCOPE" ]]; then
+          COMMIT_MSG="$TYPE($SCOPE): $DESCRIPTION"
+        else
+          COMMIT_MSG="$TYPE: $DESCRIPTION"
+        fi
+        
+        git commit -m "$COMMIT_MSG"
+        echo "✅ Committed: $COMMIT_MSG"
+      }
+      
+      case $# in
+        0)
+          interactive_mode
+          ;;
+        1)
+          if [[ "$1" == "--help" || "$1" == "-h" ]]; then
+            show_help
+          else
+            echo "Missing description"
+            show_help
+            exit 1
+          fi
+          ;;
+        2)
+          quick_mode "$1" "" "$2"
+          ;;
+        3)
+          quick_mode "$1" "$2" "$3"
+          ;;
+        *)
+          show_help
+          exit 1
+          ;;
+      esac
+      EOF
+      
+      chmod +x ~/.local/bin/semantic-commit
+
+uninstall:
+  - name: Remove semantic commit script
+    script: rm -f ~/.local/bin/semantic-commit

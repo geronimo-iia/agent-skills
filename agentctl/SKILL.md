@@ -52,16 +52,33 @@ agentctl hub generate --type docs --path ./my-docs --output index.json
 ## CI integration
 
 ```yaml
-- name: Install agentctl
-  run: |
-    curl -sSL https://github.com/geronimo-iia/agentctl/releases/latest/download/x86_64-unknown-linux-gnu.tar.gz \
-      | tar xz -C /usr/local/bin
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
 
-- name: Validate
-  run: agentctl hub validate --type skills --path .
+      - name: Install agentctl
+        run: |
+          curl -sSL https://github.com/geronimo-iia/agentctl/releases/latest/download/x86_64-unknown-linux-gnu.tar.gz \
+            | tar xz -C /usr/local/bin
 
-- name: Generate index.json
-  run: agentctl hub generate --type skills --path . --output index.json
+      - name: Validate
+        run: agentctl hub validate --type skills --path .
+
+      - name: Generate index.json
+        run: agentctl hub generate --type skills --path . --output index.json
+
+      - name: Commit index.json
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.json
+          git diff --staged --quiet || git commit -m "chore: regenerate index.json [skip ci]"
+          git push
 ```
 
 ## Skills hub rules

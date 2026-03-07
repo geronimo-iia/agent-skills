@@ -6,7 +6,7 @@ read_when:
   - Looking for existing skill implementations
   - Understanding skill architecture and patterns
 status: draft
-last_updated: "2025-01-16"
+last_updated: "2026-07-15"
 ---
 
 # Agent Skills
@@ -14,6 +14,24 @@ last_updated: "2025-01-16"
 Collection of skills for agent systems. Each skill provides specific capabilities that agents can discover, load, and execute.
 
 ## Skills
+
+### agentctl
+CLI for agent hub validation and index generation. Validates skill and doc hub directories and generates `index.json`.
+
+**Capabilities:**
+- Validate skills hub (`name`, `description`, flat hierarchy)
+- Validate docs hub (`title`, `summary`, `status`, `last_updated`, `read_when`)
+- Generate `index.json` with git commit hashes
+- CI integration with exit code 0/1
+
+### python-scaffold
+Scaffold a new Python project with standard structure, tooling, and configuration.
+
+### python-quality
+Run Python code quality checks — linting, formatting, and type checking.
+
+### semantic-commit
+Create semantic commits following sp_theory standards with interactive prompts.
 
 ### marker-pdf
 Document conversion skill using Marker. Converts PDFs, images, PPTX, DOCX, XLSX, HTML, and EPUB files to markdown, JSON, chunks, and HTML with high accuracy.

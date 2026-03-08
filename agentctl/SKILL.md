@@ -1,24 +1,28 @@
 ---
 name: agentctl
 description: >-
-  Validate and generate index.json for agent skill and doc hubs using agentctl.
-  Use when maintaining hub directories or publishing hub indexes.
-title: "agentctl Hub Management"
-summary: "Validate and generate index.json for agent skill and doc hubs"
+  Validate and generate index.json for agent skill and doc hubs, manage hub registry,
+  install/update/remove skills, and manage local agentctl config using agentctl.
+  Use when maintaining hub directories, publishing hub indexes, managing installed skills,
+  or configuring agentctl.
+title: "agentctl Hub & Skill Management"
+summary: "Validate hubs, generate indexes, manage skills and config with agentctl"
 read_when:
   - Validating a skills or docs hub
   - Generating hub index.json
   - Publishing a hub to agent-foundation
   - Setting up CI for a hub repository
+  - Installing, updating, or removing skills
+  - Managing agentctl configuration
 status: active
-last_updated: "2026-07-14"
+last_updated: "2026-07-16"
 metadata:
-  version: "0.2.0"
+  version: "0.4.0"
 ---
 
-# agentctl Hub Management
+# agentctl Hub & Skill Management
 
-Validates hub directories and generates `index.json` using [agentctl](https://github.com/geronimo-iia/agentctl).
+Validates hub directories, generates `index.json`, manages hub registry, installs/updates/removes skills, and manages local config using [agentctl](https://github.com/geronimo-iia/agentctl).
 
 ## Install
 
@@ -28,27 +32,43 @@ brew tap geronimo-iia/agent && brew install agentctl
 cargo install agent-ctl
 ```
 
-## Validate a hub
+## Hub commands
 
 ```sh
-# Skills hub
+# Validate
 agentctl hub validate --type skills --path ./my-skills
-
-# Docs hub
 agentctl hub validate --type docs --path ./my-docs
-```
 
-On failure (exit code 1):
-```
-  ✗ my-skills/bad-skill/SKILL.md:1: missing required field: name
-✗ Validation failed (1 error(s))
-```
-
-## Generate index.json
-
-```sh
+# Generate index.json
 agentctl hub generate --type skills --path ./my-skills --output index.json
 agentctl hub generate --type docs --path ./my-docs --output index.json
+
+# Registry
+agentctl hub add --type skills agent-skills https://raw.githubusercontent.com/org/repo/main/index.json --git-url https://github.com/org/repo
+agentctl hub list
+agentctl hub enable <id> / hub disable <id> / hub remove <id>
+agentctl hub refresh [<id>]
+```
+
+## Skill commands
+
+```sh
+agentctl skill install <name> [--hub <id>] [--mode <mode>]
+agentctl skill list
+agentctl skill remove <name> --hub <id>
+agentctl skill update [<name>] [--force]
+```
+
+**Global flags**: `--quiet` / `-q`, `--yes` / `-y`
+
+## Config commands
+
+```sh
+agentctl config init          # create default ~/.agentctl/config.json
+agentctl config show          # print full config
+agentctl config path          # print config file path
+agentctl config get skills_root
+agentctl config set skills_root ~/.agent/skills
 ```
 
 ## CI integration

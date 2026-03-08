@@ -71,3 +71,11 @@ For complete authoring guidelines, see [../agent-foundation/skills/authoring-gui
 - Self-contained with lifecycle.yaml
 - Compatible with agent skill discovery systems
 - Minimal structure - only include necessary files
+
+## License
+
+[MIT](LICENSE)
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).

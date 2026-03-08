@@ -1,6 +1,6 @@
 {
   "hub_id": "geronimo-iia/agent-skills",
-  "generated_at": "2026-03-08T01:47:52.178277270+00:00",
+  "generated_at": "2026-03-08T01:59:51.993129813+00:00",
   "skills": [
     {
       "slug": "jq",
@@ -11,7 +11,7 @@
       "license": "MIT",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "jq",
-      "commit": "3cfb0f6d89238ac773a00fdbd6a1c18978df02f3",
+      "commit": "e129891cb3c48d2c7b7cf7a50b9fbe827fa35110",
       "has_lifecycle": true
     },
     {
@@ -23,17 +23,17 @@
       "license": "GPL-3.0-or-later",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "marker-pdf",
-      "commit": "3cfb0f6d89238ac773a00fdbd6a1c18978df02f3",
+      "commit": "e129891cb3c48d2c7b7cf7a50b9fbe827fa35110",
       "has_lifecycle": true
     },
     {
       "slug": "agentctl",
       "name": "agentctl",
       "description": "Validate and generate index.json for agent skill and doc hubs using agentctl. Use when maintaining hub directories or publishing hub indexes.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "agentctl",
-      "commit": "3cfb0f6d89238ac773a00fdbd6a1c18978df02f3",
+      "commit": "e129891cb3c48d2c7b7cf7a50b9fbe827fa35110",
       "has_lifecycle": true
     },
     {
@@ -43,7 +43,7 @@
       "version": "0.1.0",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "python-scaffold",
-      "commit": "3cfb0f6d89238ac773a00fdbd6a1c18978df02f3",
+      "commit": "e129891cb3c48d2c7b7cf7a50b9fbe827fa35110",
       "has_lifecycle": true
     },
     {
@@ -55,7 +55,7 @@
       "license": "MIT",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "asdf",
-      "commit": "3cfb0f6d89238ac773a00fdbd6a1c18978df02f3",
+      "commit": "e129891cb3c48d2c7b7cf7a50b9fbe827fa35110",
       "has_lifecycle": true
     },
     {
@@ -65,7 +65,7 @@
       "version": "0.1.0",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "semantic-commit",
-      "commit": "3cfb0f6d89238ac773a00fdbd6a1c18978df02f3",
+      "commit": "e129891cb3c48d2c7b7cf7a50b9fbe827fa35110",
       "has_lifecycle": true
     },
     {
@@ -75,7 +75,7 @@
       "version": "0.1.0",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "python-quality",
-      "commit": "3cfb0f6d89238ac773a00fdbd6a1c18978df02f3",
+      "commit": "e129891cb3c48d2c7b7cf7a50b9fbe827fa35110",
       "has_lifecycle": true
     }
   ]

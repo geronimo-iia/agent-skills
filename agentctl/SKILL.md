@@ -17,7 +17,7 @@ read_when:
 status: active
 last_updated: "2026-07-16"
 metadata:
-  version: "0.4.0"
+  version: "0.4.1"
 ---
 
 # agentctl Hub & Skill Management
@@ -114,3 +114,20 @@ jobs:
 
 - Required frontmatter fields: `title`, `summary`, `status`, `last_updated`, `read_when`
 - `read_when` must be a non-empty list
+
+## Hub configuration (agentctl.toml)
+
+```toml
+[hub]
+id = "my-hub"
+
+[generate]
+ignore = [
+  "README.md",           # filename patterns
+  "draft-*.md",          # filename wildcards
+  "rules/templates/",    # directory patterns (v0.4.1+)
+  "docs/private/*.md",   # path wildcards (v0.4.1+)
+]
+```
+
+**Enhanced ignore patterns** (v0.4.1+): Support for directory patterns ending with `/` and path wildcards for more precise file exclusion during hub validation and generation.

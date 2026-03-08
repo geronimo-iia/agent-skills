@@ -3,6 +3,7 @@ name: agentctl
 description: >-
   Validate and generate index.json for agent skill and doc hubs using agentctl.
   Use when maintaining hub directories or publishing hub indexes.
+version: "0.2.0"
 title: "agentctl Hub Management"
 summary: "Validate and generate index.json for agent skill and doc hubs"
 read_when:

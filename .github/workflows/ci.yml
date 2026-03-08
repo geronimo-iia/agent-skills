@@ -23,7 +23,7 @@ jobs:
         run: agentctl hub validate --type skills --path .
 
       - name: Generate index.json
-        run: agentctl hub generate --type skills --path . --hub-id agent-skills --output index.json
+        run: agentctl hub generate --type skills --path . --output index.json
 
       - name: Commit index.json
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'

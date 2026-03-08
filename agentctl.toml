@@ -1,0 +1,11 @@
+[hub]
+id = "geronimo-iia/agent-skills"
+
+[generate]
+ignore = [
+  "README.md",
+  "CHANGELOG.md",
+  "CONTRIBUTING.md",
+  "ARCHIVED.md",
+  "TODO.md",
+]

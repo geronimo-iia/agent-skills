@@ -1,14 +1,3 @@
----
-title: "Agent Skills"
-summary: "Collection of skills for agent systems - tools, utilities, and capabilities that agents can use to perform tasks."
-read_when:
-  - Developing new skills for agents
-  - Looking for existing skill implementations
-  - Understanding skill architecture and patterns
-status: draft
-last_updated: "2026-07-15"
----
-
 # Agent Skills
 
 Collection of skills for agent systems. Each skill provides specific capabilities that agents can discover, load, and execute.

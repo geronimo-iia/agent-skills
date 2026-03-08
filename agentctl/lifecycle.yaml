@@ -22,7 +22,7 @@ install:
     requires_approval: true
 
 update:
-  - command: brew upgrade agentctl
+  - command: brew update && brew upgrade agentctl
     description: Upgrade agentctl to latest version via Homebrew
     platform: macos
     requires_approval: true

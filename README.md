@@ -83,7 +83,7 @@ For complete authoring guidelines, see [../agent-foundation/skills/authoring-gui
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE.md)
 
 ## Contributing
 

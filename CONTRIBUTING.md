@@ -4,8 +4,8 @@
 
 Each skill lives in its own directory and must follow the skill authoring standard:
 
-- [Skill Authoring](../agent-foundation/skills/authoring-guide.md) — `SKILL.md` frontmatter schema, required fields
-- [Lifecycle YAML Format](../agent-foundation/skills/lifecycle-format.md) — `lifecycle.yaml` spec for install/update/uninstall
+- [Skill Authoring](https://geronimo-iia.github.io/agent-foundation/skills/authoring-guide/) — `SKILL.md` frontmatter schema, required fields
+- [Lifecycle YAML Format](https://geronimo-iia.github.io/agent-foundation/skills/lifecycle-format/) — `lifecycle.yaml` spec for install/update/uninstall
 
 ## Skill structure
 
@@ -19,7 +19,7 @@ Each skill lives in its own directory and must follow the skill authoring standa
 
 ## Commit format
 
-Follow the semantic commit standard from [agent-software](../agent-software/version-control-release/git-commit-semantic.md).
+Follow the semantic commit standard from [agent-software](https://github.com/geronimo-iia/sp_theory/blob/main/agent-software/version-control-release/git-commit-semantic.md).
 
 ## Index
 

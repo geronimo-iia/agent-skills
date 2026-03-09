@@ -63,7 +63,7 @@ JSON processor for command line. Query, filter, transform, and format JSON data.
 
 ## Skill Development
 
-Skills follow the [agent-foundation skills specification](../agent-foundation/skills/authoring-guide.md):
+Skills follow the [agent-foundation skills specification](https://geronimo-iia.github.io/agent-foundation/skills/authoring-guide/):
 - `SKILL.md` with machine-readable YAML frontmatter
 - `lifecycle.yaml` for install/update/uninstall
 - `scripts/` for helper scripts (optional)
@@ -71,7 +71,7 @@ Skills follow the [agent-foundation skills specification](../agent-foundation/sk
 - `references/` for detailed documentation (optional)
 - Use `SKILL_PATH` variable provided by agent
 
-For complete authoring guidelines, see [../agent-foundation/skills/authoring-guide.md](../agent-foundation/skills/authoring-guide.md).
+For complete authoring guidelines, see [agent-foundation skills authoring guide](https://geronimo-iia.github.io/agent-foundation/skills/authoring-guide/).
 
 ## Organization
 

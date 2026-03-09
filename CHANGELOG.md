@@ -8,6 +8,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 - `github-pages-setup` skill for setting up GitHub Pages with MkDocs Material and automatic deployment
+- GitHub Pages documentation site with MkDocs Material theme
+- Automatic deployment workflow for documentation updates
 
 ## [0.2.0] - 2026-07-16
 

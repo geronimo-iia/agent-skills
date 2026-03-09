@@ -1,0 +1,58 @@
+site_name: Agent Skills
+site_description: Collection of skills for agent systems
+site_url: https://geronimo-iia.github.io/agent-skills/
+repo_url: https://github.com/geronimo-iia/agent-skills
+repo_name: geronimo-iia/agent-skills
+
+# Use mkdocs_temp as docs directory
+docs_dir: mkdocs_temp
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: blue
+      accent: blue
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - search.highlight
+    - search.share
+    - content.code.copy
+
+plugins:
+  - search
+  - mermaid2
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Home: README.md
+  - Skills:
+    - agentctl: agentctl/SKILL.md
+    - python-scaffold: python-scaffold/SKILL.md
+    - python-quality: python-quality/SKILL.md
+    - semantic-commit: semantic-commit/SKILL.md
+    - marker-pdf: marker-pdf/SKILL.md
+    - github-pages-setup: github-pages-setup/SKILL.md
+    - asdf: asdf/SKILL.md
+    - jq: jq/SKILL.md
+  - Reference:
+    - Changelog: CHANGELOG.md
+    - Contributing: CONTRIBUTING.md
+    - License: LICENSE.md
+
+copyright: Copyright &copy; 2026 Jerome Guibert

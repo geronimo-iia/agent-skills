@@ -1,6 +1,6 @@
 {
   "hub_id": "geronimo-iia/agent-skills",
-  "generated_at": "2026-03-08T22:57:46.328917300+00:00",
+  "generated_at": "2026-03-09T11:24:45.034828291+00:00",
   "skills": [
     {
       "slug": "jq",
@@ -11,8 +11,19 @@
       "license": "MIT",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "jq",
-      "commit": "b0ea04e358470827c1c85a01a07428e0654c1863",
+      "commit": "84ef0a3c25fdd5cf0138abd3f30728d97a71735d",
       "has_lifecycle": true
+    },
+    {
+      "slug": "github-pages-setup",
+      "name": "github-pages-setup",
+      "description": "Set up GitHub Pages with MkDocs Material for documentation sites with automatic deployment. Use when creating documentation websites, setting up project documentation, or deploying markdown content to GitHub Pages. Do not use for static HTML sites or Jekyll projects.",
+      "version": "0.1.0",
+      "compatibility": "Requires GitHub repository with Actions enabled",
+      "git_url": "https://github.com/geronimo-iia/agent-skills",
+      "path": "github-pages-setup",
+      "commit": "84ef0a3c25fdd5cf0138abd3f30728d97a71735d",
+      "has_lifecycle": false
     },
     {
       "slug": "marker-pdf",
@@ -23,7 +34,7 @@
       "license": "GPL-3.0-or-later",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "marker-pdf",
-      "commit": "b0ea04e358470827c1c85a01a07428e0654c1863",
+      "commit": "84ef0a3c25fdd5cf0138abd3f30728d97a71735d",
       "has_lifecycle": true
     },
     {
@@ -33,7 +44,7 @@
       "version": "0.4.1",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "agentctl",
-      "commit": "b0ea04e358470827c1c85a01a07428e0654c1863",
+      "commit": "84ef0a3c25fdd5cf0138abd3f30728d97a71735d",
       "has_lifecycle": true
     },
     {
@@ -43,7 +54,7 @@
       "version": "0.1.0",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "python-scaffold",
-      "commit": "b0ea04e358470827c1c85a01a07428e0654c1863",
+      "commit": "84ef0a3c25fdd5cf0138abd3f30728d97a71735d",
       "has_lifecycle": true
     },
     {
@@ -55,7 +66,7 @@
       "license": "MIT",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "asdf",
-      "commit": "b0ea04e358470827c1c85a01a07428e0654c1863",
+      "commit": "84ef0a3c25fdd5cf0138abd3f30728d97a71735d",
       "has_lifecycle": true
     },
     {
@@ -65,7 +76,7 @@
       "version": "0.1.0",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "semantic-commit",
-      "commit": "b0ea04e358470827c1c85a01a07428e0654c1863",
+      "commit": "84ef0a3c25fdd5cf0138abd3f30728d97a71735d",
       "has_lifecycle": true
     },
     {
@@ -75,7 +86,7 @@
       "version": "0.1.0",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "python-quality",
-      "commit": "b0ea04e358470827c1c85a01a07428e0654c1863",
+      "commit": "84ef0a3c25fdd5cf0138abd3f30728d97a71735d",
       "has_lifecycle": true
     }
   ]

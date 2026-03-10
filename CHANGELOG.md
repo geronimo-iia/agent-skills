@@ -8,7 +8,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
-- `agentctl` skill updated to v0.5.0 — added `skill export` command for backup and sharing skill installations
+- `agentctl` skill updated to v0.5.1 — added `--force` flag to `hub refresh` command for cache bypass
 
 ### Added
 - `github-pages-setup` skill for setting up GitHub Pages with MkDocs Material and automatic deployment

@@ -15,9 +15,9 @@ read_when:
   - Installing, updating, or removing skills
   - Managing agentctl configuration
 status: active
-last_updated: "2026-01-16"
+last_updated: "2026-03-10"
 metadata:
-  version: "0.5.0"
+  version: "0.5.1"
 ---
 
 # agentctl Hub & Skill Management
@@ -47,7 +47,7 @@ agentctl hub generate --type docs --path ./my-docs --output index.json
 agentctl hub add --type skills agent-skills https://raw.githubusercontent.com/org/repo/main/index.json --git-url https://github.com/org/repo
 agentctl hub list
 agentctl hub enable <id> / hub disable <id> / hub remove <id>
-agentctl hub refresh [<id>]
+agentctl hub refresh [<id>] [--force]    # --force bypasses cache
 ```
 
 ## Skill commands

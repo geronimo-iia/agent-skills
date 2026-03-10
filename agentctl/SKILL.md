@@ -15,9 +15,9 @@ read_when:
   - Installing, updating, or removing skills
   - Managing agentctl configuration
 status: active
-last_updated: "2026-07-16"
+last_updated: "2026-01-16"
 metadata:
-  version: "0.4.1"
+  version: "0.5.0"
 ---
 
 # agentctl Hub & Skill Management
@@ -57,6 +57,7 @@ agentctl skill install <name> [--hub <id>] [--mode <mode>]
 agentctl skill list
 agentctl skill remove <name> --hub <id>
 agentctl skill update [<name>] [--force]
+agentctl skill export > skills.lock.json    # backup/share installations
 ```
 
 **Global flags**: `--quiet` / `-q`, `--yes` / `-y`

@@ -6,15 +6,19 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
-### Changed
-
-- `agentctl` skill updated to v0.5.1 — added `--force` flag to `hub refresh` command for cache bypass
+## [0.3.0] - 2026-07-16
 
 ### Added
+
+- `research-paper` skill — process academic papers (PDF or URL) into a knowledge base following the `sources → extract → analysis → studies → synthesis` pipeline
 - `github-pages-setup` skill for setting up GitHub Pages with MkDocs Material and automatic deployment
 - GitHub Pages documentation site with MkDocs Material theme
 - Automatic deployment workflow for documentation updates
-- `research-paper` skill — process academic papers (PDF or URL) into a knowledge base following the `sources → extract → analysis → studies → synthesis` pipeline
+
+### Changed
+
+- `agentctl` skill updated to v0.5.1 — added `--force` flag to `hub refresh` command for cache bypass
+- README — skills listed as table, consistent formatting
 
 ## [0.2.0] - 2026-07-16
 

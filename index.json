@@ -1,7 +1,17 @@
 {
   "hub_id": "geronimo-iia/agent-skills",
-  "generated_at": "2026-03-10T01:04:59.657321566+00:00",
+  "generated_at": "2026-03-11T10:25:40.219542040+00:00",
   "skills": [
+    {
+      "slug": "research-paper",
+      "name": "research-paper",
+      "description": "Process an academic paper (PDF or URL) into the agent-knowledge repository. Extracts text, produces a structured analysis, and integrates findings into the appropriate topic. Use when asked to read, analyse, or integrate a research paper into the knowledge base. Do NOT use for general web pages or blog posts.",
+      "version": "0.1.0",
+      "git_url": "https://github.com/geronimo-iia/agent-skills",
+      "path": "research-paper",
+      "commit": "bd93fd1f358370e7fcc4222f46e059db0d5e55f1",
+      "has_lifecycle": false
+    },
     {
       "slug": "jq",
       "name": "jq",
@@ -11,7 +21,7 @@
       "license": "MIT",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "jq",
-      "commit": "e4c660e9c46c3574ec803833a69167118afcb847",
+      "commit": "bd93fd1f358370e7fcc4222f46e059db0d5e55f1",
       "has_lifecycle": true
     },
     {
@@ -22,7 +32,7 @@
       "compatibility": "Requires GitHub repository with Actions enabled",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "github-pages-setup",
-      "commit": "e4c660e9c46c3574ec803833a69167118afcb847",
+      "commit": "bd93fd1f358370e7fcc4222f46e059db0d5e55f1",
       "has_lifecycle": false
     },
     {
@@ -34,7 +44,7 @@
       "license": "GPL-3.0-or-later",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "marker-pdf",
-      "commit": "e4c660e9c46c3574ec803833a69167118afcb847",
+      "commit": "bd93fd1f358370e7fcc4222f46e059db0d5e55f1",
       "has_lifecycle": true
     },
     {
@@ -44,7 +54,7 @@
       "version": "0.5.1",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "agentctl",
-      "commit": "e4c660e9c46c3574ec803833a69167118afcb847",
+      "commit": "bd93fd1f358370e7fcc4222f46e059db0d5e55f1",
       "has_lifecycle": true
     },
     {
@@ -54,7 +64,7 @@
       "version": "0.1.0",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "python-scaffold",
-      "commit": "e4c660e9c46c3574ec803833a69167118afcb847",
+      "commit": "bd93fd1f358370e7fcc4222f46e059db0d5e55f1",
       "has_lifecycle": true
     },
     {
@@ -66,7 +76,7 @@
       "license": "MIT",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "asdf",
-      "commit": "e4c660e9c46c3574ec803833a69167118afcb847",
+      "commit": "bd93fd1f358370e7fcc4222f46e059db0d5e55f1",
       "has_lifecycle": true
     },
     {
@@ -76,7 +86,7 @@
       "version": "0.1.0",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "semantic-commit",
-      "commit": "e4c660e9c46c3574ec803833a69167118afcb847",
+      "commit": "bd93fd1f358370e7fcc4222f46e059db0d5e55f1",
       "has_lifecycle": true
     },
     {
@@ -86,7 +96,7 @@
       "version": "0.1.0",
       "git_url": "https://github.com/geronimo-iia/agent-skills",
       "path": "python-quality",
-      "commit": "e4c660e9c46c3574ec803833a69167118afcb847",
+      "commit": "bd93fd1f358370e7fcc4222f46e059db0d5e55f1",
       "has_lifecycle": true
     }
   ]
